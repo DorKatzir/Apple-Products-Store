@@ -1,4 +1,5 @@
 import React from 'react'
+import Controls from './components/Controls'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
                       overflow-auto">
 
       </div>
+      <Controls />
     </div>
   )
 }
