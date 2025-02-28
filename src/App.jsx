@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Controls from './components/Controls'
+import Navbar from './components/Navbar'
 
 const App = () => {
   const [frameZoom, setFrameZoom] = useState(false)
@@ -23,7 +24,7 @@ const App = () => {
                         relative
                         transition-all
                         duration-100 `}>
-                          
+        <Navbar />                  
         <Controls toggleZoom={toggleZoom} frameZoom={frameZoom} />  
       </div>
     </div>
