@@ -2,8 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import Controls from './components/Controls'
 import Navbar from './components/Navbar'
-import Home from './components/Home'
-import IPhone from './components/IPhone'
+// import Home from './components/Home'
+// import IPhone from './components/IPhone'
+import Macbook from './components/Macbook'
+
 
 
 const App = () => {
@@ -26,7 +28,8 @@ const App = () => {
         <Controls toggleZoom={toggleZoom} frameZoom={frameZoom} />
         <div className='flex-grow'>
           {/* <Home /> */}
-          <IPhone />
+          {/* <IPhone /> */}
+          <Macbook />
         </div>  
 
       </div>
