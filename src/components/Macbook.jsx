@@ -48,7 +48,7 @@ const Macbook = () => {
                 <div className='flex space-x-2 mb-4'>
                     {
                         currentMb.colors.map((color, index) => (
-                            <button key={index} className={`2xl:w-6 sm:w-5 w-4 2xl:h-6 sm:h-5 h-4 ${color.bg} rounded-full border hover:border-blue-500`} onClick={ ()=>handleSelectedColor(index) }></button>
+                            <button key={index} className={`2xl:w-6 sm:w-5 w-4 2xl:h-6 sm:h-5 h-4 ${color.bg} rounded-full border hover:border-blue-500 ${selectedColor === index ? 'border-2 border-blue-400': 'border-transparent'}`} onClick={ ()=>handleSelectedColor(index) }></button>
                         ))  
                     }
                 </div>
