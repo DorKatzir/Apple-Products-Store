@@ -17,15 +17,16 @@ const Watch = () => {
                         <img src={ watch.imgs[1] } alt={ watch.name } className='absolute w-full h-full object-contain opacity-0 group-hover:opacity-100 transition duration-300' />
                     </div>
                             
-                    <h3 className='2xl:text-xl xl:text-lg text-sm font-semibold'>Apple Watch Series 10</h3>
+                    <h3 className='2xl:text-xl xl:text-lg text-sm font-semibold'>{ watch.name }</h3>
 
-                    <a href="#" className='my-2 text-base text-blue-400'>From $399</a>
-                    
+                    <a href="#" className='my-2 text-base text-blue-400'>{ watch.price }</a>
+
                     <div className='md:text-sm text-xs text-gray-700 my-2'>
-                        <span className='block'>45mm or 41mm case size</span>
-                        <span className='block'>45mm or 41mm case size</span>
-                        <span className='block'>45mm or 41mm case size</span>
+                        { watch.desc.map((desc, index) => (
+                            <span key={index} className='block'>{ desc }</span>
+                        ))}   
                     </div>
+                    
                     <button type="button" className='w-min font-bold tracking-wide text-sm py-1 px-3 bg-blue-400 rounded-full text-white mt-4 md:mt-0 mb-8'>Buy</button>
                 </div>
             ))}
