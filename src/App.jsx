@@ -2,11 +2,12 @@ import React from 'react'
 import { useState } from 'react'
 import Controls from './components/Controls'
 import Navbar from './components/Navbar'
-// import Home from './components/Home'
-// import IPhone from './components/IPhone'
-// import Macbook from './components/Macbook'
-// import Watch from './components/Watch'
+import Home from './components/Home'
+import IPhone from './components/IPhone'
+import Macbook from './components/Macbook'
+import Watch from './components/Watch'
 import IMac from './components/IMac'
+import PageTransition from './components/PageTransition'
 
 
 
@@ -29,11 +30,13 @@ const App = () => {
         <Navbar handleNavClick={handleNavClick} activePage={activePage} />                  
         <Controls toggleZoom={toggleZoom} frameZoom={frameZoom} />
         <div className='flex-grow'>
-          {/* <Home /> */}
-          {/* <IPhone /> */}
-          {/* <Macbook /> */}
-          {/* <Watch /> */}
-          <IMac />
+          <PageTransition activePage={activePage}>
+            <Home />
+            <IPhone />
+            <Macbook />
+            <Watch />
+            <IMac />
+          </PageTransition>
         </div>  
 
       </div>
