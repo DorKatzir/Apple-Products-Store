@@ -6,7 +6,7 @@ function Controls({ toggleZoom, frameZoom, resetPage, activePage }) {
         <button onClick={toggleZoom} className='text-2xl text-pink-400 cursor-pointer'>
             <i className={ frameZoom ? 'bx bxs-zoom-out' : 'bx bxs-zoom-in'}></i>
         </button>
-        <button onClick={ resetPage } className={`text-2xl ${activePage !== 0 ? 'text-red-400 cursor-pointer' : 'text-neutral-300 cursor-not-allowed'}`}>
+        <button onClick={ resetPage } className={`text-2xl ${activePage === 0 ? 'text-red-200 cursor-not-allowed' : 'text-pink-400 cursor-pointer'}`}>
             <i className='bx bx-x-circle'></i>
         </button>
     </div>
