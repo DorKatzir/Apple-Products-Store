@@ -31,7 +31,7 @@ const App = () => {
         <Controls toggleZoom={toggleZoom} frameZoom={frameZoom} />
         <div className='flex-grow'>
           <PageTransition activePage={activePage}>
-            <Home />
+            <Home onNavigate={handleNavClick} />
             <IPhone />
             <Macbook />
             <Watch />
