@@ -3,10 +3,14 @@ import { imacModels } from '../data/index'
 
 const IMac = () => {
     const [selectedColor, setSelectedColor] = useState('green')
-    const [visibleLabel, setVisibleLabel] = useState('Green')
+    // const [visibleLabel, setVisibleLabel] = useState('Green')
 
     const getCurrentModel = () => {
         return imacModels.find(model => model.label.toLowerCase() === selectedColor)
+    }
+
+    function handleSelectedColor(color) {
+        setSelectedColor(color.toLowerCase())
     }
 
   return (
@@ -29,8 +33,13 @@ const IMac = () => {
             {
                 imacModels.map((model, index) => (
                     <div key={index} className='flex items-center space-x-2 w-full h-full'>
-                        <button style={{backgroundColor:`${model.bg}`}} className='2xl:w-8 md:w-5 w-4 2xl:h-8 md:h-5 h-4 rounded-full flex items-center justify-center'/>
-                        <span className='text-sm'>{ model.label }</span>
+                        <button onClick={()=>handleSelectedColor(model.label)} style={{ backgroundColor: model.bg }} className={`2xl:w-8 md:w-5 w-4 2xl:h-8 md:h-5 h-4 rounded-full flex items-center justify-center ${
+                            selectedColor === model.label.toLowerCase() && 'border-2 border-blue-400'
+                        }`}/>
+                        {
+                            selectedColor === model.label.toLowerCase() && <span className='text-sm'>{ model.label }</span>
+                        }
+                        
                     </div>
 
                 ))
