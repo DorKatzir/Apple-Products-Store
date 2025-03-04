@@ -23,7 +23,7 @@ const Macbook = () => {
   return (
     <div className='flex flex-col items-center justify-around bg-white p-8 h-full'>
         
-        <h1 className='2xl:text-4xl xl:text-3xl md:text-2xl font-semibold text-gray-800 mb-8'>
+        <h1 className='2xl:text-4xl xl:text-3xl md:text-2xl text-xl font-semibold text-gray-800 mb-8'>
             Choose your new MacBook Air.
         </h1>
         
@@ -38,13 +38,14 @@ const Macbook = () => {
                     
         </div>
 
-        <div className='flex flex-col 2xl:p-4 md:items-start items-center'>
+        <div className='flex flex-col 2xl:p-4'>
 
-            <div className='max-w-80 h-64 2xl:mb-0 mb-8'>
-                <img src={ currentColor.img  } alt={`Macbook with ${currentColor.label} color`} className='2xl:w-72 xl:w-52 w-48 h-full 2xl:mt-0 sm:-mt-6' />
+            <div className='max-w-80 max-h-64 min-h-24 2xl:mb-0'>
+                <img style={{ marginBlock: 'auto' }} src={ currentColor.img  } alt={`Macbook with ${currentColor.label} color`} className='2xl:w-72 xl:w-52 w-48 h-full 2xl:mt-0 sm:-mt-6 object-contain' />
+                
             </div>
 
-            <span className='2xl:text-lg xl:text-sm font-medium text-gray-800 mb-2 text-center md:text-left'>{ currentColor.label}</span>
+            <span className='2xl:text-lg xl:text-sm font-medium text-gray-800 mb-2'>{ currentColor.label}</span>
 
             <div className='flex space-x-2 mb-4'>
                 {
@@ -54,7 +55,7 @@ const Macbook = () => {
                 }
             </div>
 
-            <img src={ currentMb.icon } alt={`${currentMb.chip} Macbook Chip Model`} className='w-12 h-12 2xl:mb-4 xl:mb-2' />
+            <img src={ currentMb.icon } alt={`${currentMb.chip} Macbook Chip Model`} className='w-12 h-12 2xl:mb-4 mb-2' />
 
             <div className='2xl:mb-4 xl:mb-2'>
                 {
@@ -65,7 +66,7 @@ const Macbook = () => {
                 
             </div>
 
-            <button type="button" className='w-min font-bold tracking-wide text-sm py-1 px-3 bg-blue-400 rounded-full text-white mt-4 md:mt-0 mb-8'>Buy</button>
+            <button type="button" className='w-min font-bold tracking-wide text-sm py-1 px-3 bg-blue-400 rounded-full text-white mt-4 md:mt-0 mb-4'>Buy</button>
 
         </div>
 
