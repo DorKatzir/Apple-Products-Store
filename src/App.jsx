@@ -14,6 +14,7 @@ const App = () => {
   const [frameZoom, setFrameZoom] = useState(false)
   const [activePage, setActivePage] = useState(0)
   const [isLgScreen, setIsLgScreen] = useState(window.innerWidth > 1024)
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
 
   useEffect(() => {
     function handleResize() {
@@ -39,11 +40,15 @@ const App = () => {
     setActivePage(0)
   }
 
+  function toggleMobileNav(){
+    setIsMobileNavOpen(!isMobileNavOpen)
+  }
+
   return (
     <div className='w-full h-screen grid place-items-center'>
       <div className={`flex ${frameZoom && 'min-w-[97vw] min-h-[97vh]'} w-[70vw] h-[85vh] min-w-[70vw] min-h-[85vh] max-w-[90vw] max-h-[90vh] border border-gray-300 rounded-2xl resize overflow-auto relative transition-all duration-100`}>
         
-        <Navbar handleNavClick={handleNavClick} activePage={activePage} />                  
+        <Navbar handleNavClick={handleNavClick} activePage={activePage} isMobileNavOpen={isMobileNavOpen} toggleMobileNav={toggleMobileNav} />                  
         <Controls toggleZoom={toggleZoom} frameZoom={frameZoom} resetPage={resetPage} activePage={activePage}/>
         <div className='flex-grow'>
           <PageTransition activePage={activePage}>
