@@ -4,7 +4,7 @@ import { navItems } from '../data/index'
 const Navbar = ({ handleNavClick, activePage, isMobileNavOpen, toggleMobileNav }) => {
   return (
     <>
-        <div className={`2xl:w-80 xl:w-52 w-44 h-full bg-[#f8f8f8] flex flex-col justify-between pt-5 pl-6 pb-14 md:pb-0 absolute md:relative z-10 ${isMobileNavOpen ? 'translate-x-0' : '-translate-x-110 md:-translate-x-0'} transition-all duration-300`}>
+        <div className={`2xl:w-80 xl:w-52 w-44 h-full bg-[#f8f8f8] flex flex-col justify-between pt-5 pl-6 pb-14 md:pb-0 absolute md:relative z-10 ${isMobileNavOpen ? 'translate-x-0' : '-translate-x-110 md:-translate-x-0'} transition-transform duration-300`}>
             <a href="" className='text-2xl xl:text-xl font-light text-red-600 mb-14 tracking-wider'>
                 Apple Products
             </a>
@@ -41,7 +41,9 @@ const Navbar = ({ handleNavClick, activePage, isMobileNavOpen, toggleMobileNav }
         </div>
 
         <button onClick={ toggleMobileNav } className='fixed md:hidden bottom-4 left-4 p-2 text-4xl text-blue-400 z-30'>
-            <i className='bx bx-menu'></i>
+            {
+                isMobileNavOpen ? <i className='bx bx-x'></i> : <i className='bx bx-menu'></i>
+            }
         </button>
 
         
